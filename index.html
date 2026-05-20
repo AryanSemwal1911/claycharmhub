@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClayCharmHub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#fffaf8;
+      color:#5d4b4b;
+      overflow-x:hidden;
+    }
+
+    /* Cute floating doodles */
+    .doodle{
+      position:absolute;
+      opacity:0.15;
+      z-index:-1;
+    }
+
+    .heart1{
+      top:100px;
+      left:50px;
+      font-size:80px;
+      color:#ffb3c6;
+    }
+
+    .star1{
+      top:300px;
+      right:60px;
+      font-size:70px;
+      color:#ffd6a5;
+    }
+
+    .flower1{
+      bottom:200px;
+      left:70px;
+      font-size:90px;
+      color:#cdb4db;
+    }
+
+    header{
+      background:linear-gradient(135deg,#ffe5ec,#ffd6e0,#e2f0cb);
+      padding:80px 20px;
+      text-align:center;
+      border-bottom-left-radius:40px;
+      border-bottom-right-radius:40px;
+      position:relative;
+    }
+
+    header h1{
+      font-family:'Pacifico', cursive;
+      font-size:4rem;
+      color:#8b5e83;
+      margin-bottom:15px;
+    }
+
+    header p{
+      font-size:1.1rem;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .shop-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 35px;
+      background:#ffcad4;
+      color:#5d4b4b;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .shop-btn:hover{
+      background:#f4acb7;
+      transform:translateY(-3px);
+    }
+
+    .products{
+      padding:80px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.5rem;
+      margin-bottom:50px;
+      color:#8b5e83;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:35px;
+    }
+
+    .product-card{
+      background:#fff;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.3s;
+      position:relative;
+    }
+
+    .product-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:20px;
+      text-align:center;
+    }
+
+    .product-info h3{
+      margin-bottom:10px;
+      color:#6d597a;
+    }
+
+    .price{
+      font-size:1.2rem;
+      font-weight:600;
+      color:#b56576;
+    }
+
+    .cute-tag{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:#ffe8d6;
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:0.8rem;
+      font-weight:600;
+    }
+
+    .note-section{
+      padding:60px 10%;
+    }
+
+    .note-box{
+      background:#fff0f3;
+      padding:35px;
+      border-radius:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+      line-height:1.9;
+    }
+
+    .note-box h2{
+      margin-bottom:20px;
+      color:#8b5e83;
+    }
+
+    footer{
+      margin-top:60px;
+      background:#ffe5ec;
+      text-align:center;
+      padding:40px 20px;
+      border-top-left-radius:40px;
+      border-top-right-radius:40px;
+    }
+
+    footer h3{
+      font-family:'Pacifico', cursive;
+      color:#8b5e83;
+      margin-bottom:15px;
+    }
+
+    footer p{
+      margin:8px 0;
+    }
+
+    .socials{
+      margin-top:20px;
+    }
+
+    .socials a{
+      text-decoration:none;
+      margin:0 10px;
+      color:#6d597a;
+      font-weight:600;
+    }
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:3rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Doodles -->
+  <div class="doodle heart1">♡</div>
+  <div class="doodle star1">✦</div>
+  <div class="doodle flower1">❀</div>
+
+  <!-- Header -->
+  <header>
+
+    <h1>ClayCharmHub</h1>
+
+    <p>
+      Handmade creations crafted with love, patience, and tiny magical details ✨
+      Discover aesthetic clay charms, jewellery, keychains, fridge magnets and cute collectibles made specially for you. With hopes of many new stuffs coming soon.
+    </p>
+
+    <a href="#products" class="shop-btn">Shop Now</a>
+
+  </header>
+
+  <!-- Products -->
+  <section class="products" id="products">
+
+    <h2 class="section-title">Our Cute Collection</h2>
+
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+
+        <div class="cute-tag">Best Seller</div>
+
+        <img src="https://furious-moccasin-7u0qm5wspr.edgeone.app/file_00000000328471fabe4134ed802fd278.png" alt="Clay Charm">
+
+        <div class="product-info">
+          <h3>Starry Heart Keychain</h3>
+          <p class="price">₹80 (each)</p>
+        </div>
+
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+
+        <img src="https://plain-maroon-s7gmldzfyf.edgeone.app/SaveClip.App_562771248_17880413163401282_3270385542448142512_n.jpg" alt="Clay Earrings">
+
+
+        <div class="product-info">
+          <h3>ShriRadha name floral magnet decor</h3>
+          <p class="price">₹200</p>
+        </div>
+
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+
+        <div class="cute-tag">New</div>
+
+        <img src="https://divine-copper-sgl9ftci4l.edgeone.app/SaveClip.App_670726257_17904596586401282_2407430577339323001_n.jpg" alt="Keychain">
+
+        <div class="product-info">
+          <h3>TIny Turtle Charm</h3>
+          <p class="price">₹100</p>
+        </div>
+
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+
+        <img src="https://vocational-indigo-jx3v4vumvx.edgeone.app/SaveClip.App_671826140_17905856031401282_6894834276953778922_n.jpg" alt="Custom Charm">
+
+        <div class="product-info">
+          <h3>Floral Motivation magnet Decor</h3>
+          <p class="price">₹200</p>
+        </div>
+
+      </div>
+
+<!-- Product 5 -->
+<div class="product-card">
+
+  <div class="cute-tag">Cute</div>
+
+  <img src="https://liberal-silver-a8lc1cdxux.edgeone.app/SaveClip.App_685076089_17906987829401282_3197479772457610690_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Purple Positivity Magnet Decor</h3>
+    <p class="price">₹200</p>
+  </div>
+
+</div>
+
+<!-- Product 6 -->
+<div class="product-card">
+
+  <img src="https://secondary-black-kf7a2lkoxc.edgeone.app/SaveClip.App_670006556_17904596577401282_5981927567285895000_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Blossom Bear Keychain</h3>
+    <p class="price">₹100</p>
+  </div>
+
+</div>
+
+<!-- Product 7 -->
+<div class="product-card">
+
+  <div class="cute-tag">Handmade</div>
+
+  <img src="https://curly-magenta-tgc7cykx0x.edgeone.app/SaveClip.App_541522463_17876437800401282_1451159191270361179_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Jagannath Trio Set</h3>
+    <p class="price">₹350</p>
+  </div>
+
+</div>
+
+<!-- Product 8 -->
+<div class="product-card">
+
+  <img src="https://artistic-magenta-2d6dwz9lrh.edgeone.app/SaveClip.App_542853714_17876653188401282_4290177796188485594_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Ellie- the Lovephant Keychain</h3>
+    <p class="price">₹100</p>
+  </div>
+
+</div>
+
+<!-- Product 9 -->
+<div class="product-card">
+
+  <div class="cute-tag">Cute</div>
+
+  <img src="https://unpleasant-peach-uxdvp1shfk.edgeone.app/SaveClip.App_542416284_17876881698401282_4451583993203570903_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Mr. Bean Teddy Keychain</h3>
+    <p class="price">₹120</p>
+  </div>
+
+</div>
+
+<!-- Product 10 -->
+<div class="product-card">
+
+  <img src="https://experienced-apricot-wnksrldhtv.edgeone.app/SaveClip.App_548895540_17877968154401282_4041510466429086387_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Bunny Buddies</h3>
+    <p class="price">₹80 (each)</p>
+  </div>
+
+</div>
+
+<!-- Product 11 -->
+<div class="product-card">
+
+  <div class="cute-tag">Handmade</div>
+
+  <img src="https://senior-plum-rssilgvpvg.edgeone.app/702382340_1451126046767359_5447482583291545159_n.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>SunnyBuzz Personalised keychain</h3>
+    <p class="price">₹150</p>
+  </div>
+
+</div>
+
+<!-- Product 12 -->
+<div class="product-card">
+
+  <img src="product8.jpg" alt="Clay Product">
+
+  <div class="product-info">
+    <h3>Coming Soon</h3>
+    <p class="price">₹</p>
+  </div>
+
+</div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Notes -->
+  <section class="note-section">
+
+    <div class="note-box">
+
+      <h2>Important Notes 💌</h2>
+
+      <p>
+        
+        • Shipping charges are not included. It will be later accommodated whatever it costs.
+
+      <p>
+        • Delivery will take time of 2–3 weeks, so please be patient with us in this beautiful journey. Your wait will be worth it ✨
+      </p>
+
+      <p>
+        • Every product is handmade, which means slight variations make each piece unique and special.
+      </p>
+
+      <p>
+        • Colors may vary slightly due to screen settings and lighting.
+      </p>
+
+      <p>
+        • Custom orders are available! Contact us through Instagram or email for personalized creations.
+      </p>
+
+      <p>
+        • Thank you for supporting small handmade business 🤍
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+    <h3>ClayCharmHub</h3>
+
+    <p>Made with love, clay & creativity ✨</p>
+
+    <p>Email: nishusingh81102@gmail.com</p>
+
+    <p>Instagram: @claycharmhub118</p>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/claycharmhub118/">Instagram</a>
+      <a href="https://pin.it/4tsvGHA4S">Pinterest</a>
+      <a href="#">Shop</a>
+    </div>
+
+  </footer>
+
+<!-- Comments Section -->
+<section class="comment-section">
+
+  <h2 class="comment-title">
+    Leave Your Comments & Ideas ✨
+  </h2>
+
+  <p class="comment-text">
+    We love hearing your cute ideas, feedback & custom requests 🌸
+  </p>
+
+  <form class="comment-form">
+
+    <input type="text" placeholder="Your Name" required>
+
+    <textarea 
+      placeholder="Write your comments or ideas here..."
+      rows="6"
+      required>
+    </textarea>
+
+    <button type="submit">
+      Send Message 💌
+    </button>
+
+  </form>
+
+</section>
+
+</body>
+</html>
